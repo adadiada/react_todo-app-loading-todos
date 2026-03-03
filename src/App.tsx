@@ -66,7 +66,6 @@ export const App: React.FC = () => {
 
       <div className="todoapp__content">
         <header className="todoapp__header">
-          {/* this button should have `active` class only if all todos are completed */}
           <button
             type="button"
             className={
@@ -77,7 +76,6 @@ export const App: React.FC = () => {
             data-cy="ToggleAllButton"
           />
 
-          {/* Add a todo on form submit */}
           <form onSubmit={handleSubmit}>
             <input
               data-cy="NewTodoField"
@@ -115,7 +113,6 @@ export const App: React.FC = () => {
                 {todo.title}
               </span>
 
-              {/* Remove button appears only on hover */}
               <button
                 type="button"
                 className="todo__remove"
@@ -124,7 +121,6 @@ export const App: React.FC = () => {
                 ×
               </button>
 
-              {/* overlay will cover the todo while it is being deleted or updated */}
               <div data-cy="TodoLoader" className="modal overlay">
                 <div className="modal-background has-background-white-ter" />
                 <div className="loader" />
@@ -139,7 +135,6 @@ export const App: React.FC = () => {
               {activeCount} {activeCount === 1 ? 'item' : 'items'} left
             </span>
 
-            {/* Active link should have the 'selected' class */}
             <nav className="filter" data-cy="Filter">
               <a
                 href="#/"
@@ -169,7 +164,6 @@ export const App: React.FC = () => {
               </a>
             </nav>
 
-            {/* this button should be disabled if there are no completed todos */}
             <button
               type="button"
               className="todoapp__clear-completed"
@@ -182,8 +176,6 @@ export const App: React.FC = () => {
         )}
       </div>
 
-      {/* DON'T use conditional rendering to hide the notification */}
-      {/* Add the 'hidden' class to hide the message smoothly */}
       <Error error={error} onCloseError={() => setError('')} />
     </div>
   );
