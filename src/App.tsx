@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { UserWarning } from './UserWarning';
 import { USER_ID } from './api/todos';
 import { Todo } from './types/Todo';
+import { Filter } from './utils/Filter';
 import { getTodos } from './api/todos';
 import { Error } from './component/Error';
 
@@ -30,11 +31,11 @@ export const App: React.FC = () => {
   };
 
   const filteredTodos = todos.filter(todo => {
-    if (filter === 'active') {
+    if (filter === Filter.Active) {
       return !todo.completed;
     }
 
-    if (filter === 'completed') {
+    if (filter === Filter.Completed) {
       return todo.completed;
     }
 
